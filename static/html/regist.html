@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="misapplication-tap-highlight" content="no" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="MobileOptimized" content="320" />
+		<!--<link rel="stylesheet/less" type="text/css" href="../css/main.less">-->
+		<link rel="stylesheet" type="text/css" href="../css/main.css" />
+		<!--<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.1/less.min.js"></script>-->
+
+		<title>RIGIST</title>
+		<script>
+		function a(){
+			var url = "http://www.dcloud.io/";
+			plus.webview.create(url).show();
+		}
+		</script>
+	</head>
+
+	<body>
+		<header class="bar-header">
+			<a>注册</a>
+		</header>
+		<article class="clearfix" id="fix">
+			<div class="user_pic" id="user_pic">
+				<div class="pic_border">
+					<div class="pic_content">
+						<img src="../img/camera.png" onclick="a()"/>
+					</div>
+				</div>
+			</div>
+			<div class="info_input">
+				<div class="name_user clearfix">
+					<div class="name clearfix">
+						<input type="text" placeholder="昵称" />
+					</div>
+					<div class="user">
+						<input type="text" placeholder="用户名" />
+					</div>
+				</div>
+				<div class="sex">
+					<input type="text" placeholder="性别" />
+				</div>
+				<div class="e-mail">
+					<input type="text" placeholder="邮箱" />
+				</div>
+				<div class="pass">
+					<input type="password" placeholder="密码" />
+				</div>
+				<div class="pass_sure">
+					<input type="password" placeholder="确认密码" />
+				</div>
+				<div class="tel">
+					<input type="text" placeholder="电话" />
+				</div>
+			</div>
+		</article>
+		<footer class="bar-footer"><a>确认注册</a>
+		</footer>
+		<script>
+			var fix = document.getElementById('fix');
+			var user_pic = document.getElementById('user_pic');
+			window.onresize = function(){
+				if(window.innerHeight<400){
+					user_pic.style.display = 'none';
+				}else{
+					user_pic.style.display = 'block';
+				}
+			}
+		</script>
+	</body>
+
+</html>
