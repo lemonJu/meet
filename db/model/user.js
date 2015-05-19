@@ -1,7 +1,7 @@
-var userSchema = require('../schema/user');
-var mongoose = require('mongoose');
+var userSchema = require('../schemas/user');
 
-module.exports = mongoose.model('user', userSchema);
-
-
-
+exports.getModel = function(db) {
+    //console.log(db)
+    var userModel = db.model('user', userSchema);
+    return userModel
+};
