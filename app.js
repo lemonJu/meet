@@ -4,6 +4,8 @@ var route = require('./config/route');
 var parse = require('co-body');
 var path = require('path');
 
+var logger = require('koa-logger');
+
 //http://cnpmjs.org/package/koa-bodyparser
 var bodyParser = require('koa-bodyparser');
 
@@ -12,22 +14,25 @@ var session = require('koa-session');
 
 var app = koa();
 
-//session keys
-app.keys = ['keys'];
-app.use(session(app));
+//http://cnpmjs.org/package/koa-logger
+app.use(logger());
 
-app.use(function *(){
-    this.session.a = this.session.a?this.session.a+1:1;
-    console.log(this.session.a);
-})
-
-//app.use(session(app));
+// static-allocation
+app.use(serve(path.join(__dirname, '/static')));
 
 // body parser
 app.use(bodyParser());
 
-// static-allocation
-app.use(serve(path.join(__dirname, '/static')));
+//session keys
+app.keys = ['keys'];
+app.use(session(app));
+
+//app.use(session(app));
+/*app.use(function *(){
+    this.session.a = this.session.a?this.session.a+1:1;
+    console.log(this.session.a);
+})*/
+
 
 route.init(app);
 // listen port
