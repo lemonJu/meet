@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="container"></div>
+    <div class="chat">
+        <input type="text" id="message" placeholder="message"/>
+        <input type="text" id="to" placeholder="to"/>
+        <button id="send">发送</button>
+    </div>
+</body>
+<script>
+    $("#send").click(function() {
+        $.get('/chatSend?'+'to='+$("#to").val()+'&content='+$("#message").val(), '', function(e) {
+            console.log(e)
+        })
+    })
+
+    function getMessage() {
+        $.get('/chatGet', '', function(e) {
+            e.forEach(function(message) {
+                $("#container").append('<p>'+message.time+" " + message.from +" <br>" + message.content+'</p>')
+            })
+            getMessage();
+        })
+    }
+
+    getMessage()
+</script>
+</html>
