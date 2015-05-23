@@ -18,6 +18,7 @@ module.exports = {
         var data = this.request.body;
         var userModel = require('../db/model/user').getModel(db);
         var userEntity = new userModel();
+
         var params = url.parse(this.req.url, true).query;
 
         params.username = data.username || params.username;
@@ -40,6 +41,8 @@ module.exports = {
     },
     logup: function *() {
         var data = this.request.body;
+
+        console.log(data)
         var userModel = require('../db/model/user').getModel(db);
 
         if(data.nickname && data.password) {

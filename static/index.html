@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<script src="./js/zepto.min.js"></script>
 	<title></title>
 </head>
 <body>
-	<form action="/test" method="post">
+	<form action="/logup" method="post">
 		<div>
 			<input type="text" name="nickname" placeholder="nickname"/>
 		</div>
@@ -27,4 +28,11 @@
 		<input type="submit"/>
 	</form>
 </body>
+<script>
+	$(function() {
+		$.post("/logup", "password=123&nickname=test", function(s) {
+			alert(s)
+		})
+	})
+</script>
 </html>

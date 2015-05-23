@@ -17,11 +17,13 @@ var app = koa();
 //http://cnpmjs.org/package/koa-logger
 app.use(logger());
 
-// static-allocation
-app.use(serve(path.join(__dirname, '/static')));
+
 
 // body parser
 app.use(bodyParser());
+
+// static-allocation
+app.use(serve(path.join(__dirname, '/static')));
 
 //session keys
 app.keys = ['keys'];
