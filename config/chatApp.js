@@ -33,7 +33,10 @@ app.bind = function(from, to, content) {
     app.trigger(to)
 };
 
-app.get = function() {
+app.get = function(user) {
     // push callback
+    setTimeout(function(){
+        app.trigger(user);
+    }, 0)
     return thunkify(addCallBack)
-}
+};

@@ -1,0 +1,110 @@
+
+/* 样式的覆盖 */
+
+body{
+	background-color: #f3f4f8;
+}
+header{
+	background: #f3f4f8 url(../img/tongxin_header.png) no-repeat 0 0;
+	background-size: 100% 100%;
+}
+header i{
+	color: #fff;
+}
+
+
+/* 重定义样式 */
+.left_back{
+	position: relative;
+/* width: 100%; */
+float: left;
+height: 100%;
+line-height: 50px;
+color: #fff;
+margin-left: 0.3em;
+}
+.left_back i{
+	padding: 0 0.4em 0 0.1em;
+float: left;
+line-height: 50px;
+}
+.left_back .message{
+	float: left;
+line-height: 50px;
+}
+.right_linkman{
+	position: relative;
+}
+.right_linkman i{
+	position: absolute;
+right: 1em;
+line-height: 50px;
+}
+
+
+/* footer 样式 */
+.footer_box{
+	height: 40px;
+	border-top: 1px solid #ccc;
+}
+.icon_box{
+	height: 100%;
+line-height: 50px;
+}
+.main{
+	float: left;
+width: 100%;
+}
+.icon{
+	color: #ababab;
+}
+.sound{
+	float: left;
+margin-left: -96%;
+}
+.sound span{
+	
+}
+.sound span i{
+	
+}
+.input_box{
+	display: inline-block;
+width: 100%;
+padding: 0.3em 6.5em 0 3.5em;
+}
+.input_box span{
+	
+}
+.input_box span textarea{
+	resize: none;
+border: 1px solid #d4d0d0;
+border-radius: 6px;
+outline: none;
+width: 100%;
+font-size: 1.1em;
+padding-left: 8px;
+padding-top: 5px;
+height: 30px;
+}
+.smeil{
+	float: left;
+margin-left: -22%;
+}
+.plus{
+	float: left;
+margin-left: -11%;
+width: 2.5em;
+}
+
+.bar-header .fa-angle-left,
+.bar-header .fa-user{
+	font-size: 1.4em;
+}
+
+
+
+
+
+
+
